@@ -1,8 +1,9 @@
 from keras.models import Model
-from keras.layers import *
-from crfrnn_layer import *
+from keras.layers import Conv2D, MaxPooling2D, Input, ZeroPadding2D, \
+    Dropout, Conv2DTranspose, Cropping2D, Add
+from crfrnn_layer import CrfRnnLayer
 
-def CrfRnnNet():
+def get_crfrnn_model_def():
     """
     Returns Keras CRN-RNN model definition.
     Currently, only 500 x 500 images are supported. However, one can get this to
@@ -84,6 +85,6 @@ def CrfRnnNet():
                          num_iterations=10,
                          name='crfrnn')([upscore, img_input])
 
-    # build the model
+    # Build the model
     model = Model(img_input, output, name='crfrnn_net')
     return model

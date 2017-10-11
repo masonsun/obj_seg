@@ -1,17 +1,15 @@
-"""
-Code reproduced @sadeepj for CRN-RNN implementation in Tensorflow
-"""
-
 import numpy as np
 import tensorflow as tf
 from keras.engine.topology import Layer
 from tensorflow.python.framework import ops
 
-# gradients for the custom operation
-custom_module = tf.load_op_library('../cpp/high_dim_filter.so')
+# register gradients for the custom op
+custom_module = tf.load_op_library('./cpp/high_dim_filter.so')
 
 class CrfRnnLayer(Layer):
     """
+    CRN-RNN implementation in Tensorflow. Reproduced from @sadeepj.
+
     Implements the CRF-RNN layer described in: Conditional Random Fields as Recurrent Neural Networks,
     S. Zheng, S. Jayasumana, B. Romera-Paredes, V. Vineet, Z. Su, D. Du, C. Huang and P. Torr, ICCV 2015
     """
@@ -102,9 +100,10 @@ class CrfRnnLayer(Layer):
 @ops.RegisterGradient("HighDimFilter")
 def _high_dim_filter_grad(op, grad):
     """
-    Gradients for the HighDimFilter op. We only need to calculate the gradients
-    w.r.t. the first input (unaries) as we never need to backprop errors to the
-    second input (RGB values of the image).
+    Gradients for the high dimension filter operation. Reproduced from @sadeepj.
+
+    We only need to calculate the gradients w.r.t. the first input (unaries) as we 
+    never need to backprop errors to the second input (RGB values of the image).
 
     Args:
     op:     the `high_dim_filter` operation that we are differentiating.
