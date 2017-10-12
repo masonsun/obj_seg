@@ -1,6 +1,9 @@
 numpy
+scipy
+matplotlib
 tensorflow
+tensorflow_gpu
 keras
 matplotlib
-pillow
+Pillow
 h5py

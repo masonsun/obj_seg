@@ -11,6 +11,12 @@ bin/
 include/
 lib/
 pip-selfcheck.json
+.venv
+venv/
+ENV/
+
+# data
+data/*/
 
 # weights
 *.h5
@@ -89,11 +95,6 @@ celerybeat-schedule
 
 # dotenv
 .env
-
-# virtualenv
-.venv
-venv/
-ENV/
 
 # Spyder project settings
 .spyderproject
