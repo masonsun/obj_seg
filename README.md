@@ -23,7 +23,7 @@ As per the original model, you can download the weights from [here](https://goo.
 
 ```
 # run a demo
-python eval.py
+python eval_crfrnn.py
 ```
 
 If successful, a file with the segmentation named "labels.png" will be created.
