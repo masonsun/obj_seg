@@ -1,8 +1,8 @@
-# Object Segmentation using Deep Reinforcement Learning
+# Object Segmentation
 
-## Downloading the dataset
+## Downloading DAVIS
 
-...to be completed...
+...to be updated...
 
 ## Running standalone CRF-RNN
 

@@ -2,7 +2,6 @@ numpy
 scipy
 matplotlib
 tensorflow
-tensorflow_gpu
 keras
 matplotlib
 Pillow

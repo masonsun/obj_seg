@@ -1,7 +1,7 @@
 from keras.models import Model
-from keras.layers import Conv2D, MaxPooling2D, Input, ZeroPadding2D, \
-    Dropout, Conv2DTranspose, Cropping2D, Add
+from keras.layers import Conv2D, MaxPooling2D, Input, ZeroPadding2D, Dropout, Conv2DTranspose, Cropping2D, Add
 from crfrnn_layer import CrfRnnLayer
+
 
 def get_crfrnn_model_def():
     """

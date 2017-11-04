@@ -6,6 +6,7 @@ from tensorflow.python.framework import ops
 # register gradients for the custom op
 custom_module = tf.load_op_library('./cpp/high_dim_filter.so')
 
+
 class CrfRnnLayer(Layer):
     """
     CRN-RNN implementation in Tensorflow. Reproduced from @sadeepj.
